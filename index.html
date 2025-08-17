@@ -12,102 +12,122 @@
       background-size: cover;
       color: #fff;
     }
+
     header {
       background-color: rgba(10, 77, 162, 0.9);
       color: white;
-      padding: 1.5rem;
+      padding: 1rem;
       text-align: center;
+      position: relative; /* important so tagline positions work */
     }
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    nav {
-      text-align: center;
-      margin: 1rem 0;
-    }
-    nav a {
-      text-decoration: none;
-      color: #ffffff;
-      background-color: rgba(10, 77, 162, 0.8);
-      padding: 0.5rem 1rem;
-      margin: 0 0.5rem;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-	.tagline {
-	  margin-top: -2.5rem; /* Moves it up */
-      margin-left: 5rem; /* Moves it right */
-      font-size: 1rem;
-	}
-	.language-toggle {
+
+    .language-toggle {
       position: absolute;
-      top: 1rem;
+      top: 0.5rem;
       right: 1rem;
       font-size: 0.9rem;
     }
-    nav a.active {
-      background-color: #0a4da2;
+
+    .language-toggle a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 0.3rem;
+      font-weight: bold;
     }
+
+    .logo {
+      display: block;
+      margin: 1rem auto 0.5rem auto;
+      max-height: 170px;
+      width: auto;
+    }
+
+    .tagline {
+      position: absolute;
+      color: #fff;
+    }
+
     main {
-      max-width: 800px;
+      max-width: 90%;
+      width: 800px;
       margin: 2rem auto;
-      padding: 2rem;
+      padding: 1.5rem;
       background-color: rgba(255, 255, 255, 0.9);
       color: #333;
       border-radius: 8px;
+      text-align: center;
     }
+
+    main h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    main img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+      height: auto;
+    }
+
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #616161;
       padding: 1rem 0;
-      margin-top: 3rem;
-    }
-    .logo {
-      display: block;
-      margin: 0 auto 1rem auto;
-      max-height: 170px;
-    }
-    .disclaimer-link {
-      display: block;
       margin-top: 2rem;
-      text-align: center;
+    }
+
+    /* Mobile tagline */
+    @media (max-width: 600px) {
+      .logo {
+        max-height: 90px;
+      }
+
+      .tagline {
+        top: 6.2rem;   /* adjust position for mobile */
+        left: 9.3rem;  /* adjust position for mobile */
+        font-size: 0.6rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      main h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Desktop tagline */
+    @media (min-width: 601px) {
+      .tagline {
+        top: 10rem;    /* adjust position for desktop */
+        left: 39.5rem;  /* adjust position for desktop */
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-   <header>
-    <div style="text-align: right; padding: 0 1rem; margin-top: -1rem;">
-		<a href="index.html" style="color: #fff; text-decoration: none; margin: 0 0.5rem;">ET</a> |
-		<a href="en/index.html" style="color: #fff; text-decoration: none; margin: 0 0.5rem;">EN</a> <!-- |
-		<a href="#" style="color: #fff; text-decoration: none; margin: 0 0.5rem;">RU</a> -->
-	</div>
-	<a href="index.html">
+  <header>
+    <div class="language-toggle">
+      <a href="index.html">ET</a> | 
+      <a href="/en/index.html">EN</a> <!-- | <a href="#">RU</a> -->
+    </div>
+    <a href="index.html">
       <img src="nodeden_logo.png" alt="NodeDen Logo" class="logo" />
-	</a> 
-    <p class="tagline">Modern IT Repair & Refurbishment</p>	 
+    </a>
+    <p class="tagline">Modern IT Repair & Refurbishment</p>
   </header>
-
-  <nav>
-    <!-- <a href="NodeDen.html" class="active">Home</a>
-    <a href="services.html">Services</a>
-    <a href="prices.html">Prices</a>
-    <a href="status.html">Check Status</a>
-    <a href="booking.html">Booking</a>
-    <a href="shop.html">Shop</a>
-    <a href="contact.html">Contact</a> -->
-  </nav>
 
   <main>
     <h2>Varsti avame, ehitus käib :)</h2>
-    <!-- <p>We offer modern and trustworthy IT repair, refurbishment, and upgrade services. Based in Tallinn, Estonia, our services are available during evenings and weekends — perfect for people with busy daytime schedules.</p> -->
-	<img src="construction.png" alt="Image for Construction" style="max-width: 100%; border-radius: 8px; margin-top: 1rem;" />
-    <!-- <p>Whether you need a device repaired, refurbished, or just need tech help after hours, NodeDen is here for you.</p> -->
+    <img src="construction.png" alt="Image for Construction" />
   </main>
 
   <footer>
-    <p>&copy; 2025 NodeDen. All rights reserved. <!-- | <a href="disclaimer.html">Disclaimer & Terms</a></p> -->
+    <p>&copy; 2025 NodeDen. All rights reserved.</p>
   </footer>
 </body>
 </html>
