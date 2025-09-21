@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NodeDen - Contact</title>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeSOcIrAAAAAIEyrMbzVkBrLnZkzOKtYueXTsTl"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: url('tech_background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    /* HEADER */
+	header {
+	  background-color: rgba(10, 77, 162, 0.9);
+	  color: white;
+	  padding: 0.1rem;
+	  text-align: center;
+	  position: relative;
+	}
+
+	.lang-switch {
+	  text-align: right;
+	  padding: 0 1rem;
+	  margin-top: 1rem;
+	}
+
+	.lang-switch a {
+	  color: #fff;
+	  text-decoration: none;
+	  margin: 0 0.5rem;
+	  font-weight: bold;
+	  font-size: 0.9rem;
+	}
+
+	.brand {
+	  display: flex;
+	  flex-direction: column;   /* stack logo and tagline */
+	  align-items: center;      /* center horizontally */
+	  justify-content: center;  /* center vertically */
+	  text-align: center;       /* center tagline text */
+	}
+
+
+	.logo {
+	  max-height: 170px;
+	  margin-bottom: 0.5rem;
+	}
+
+	.tagline {
+	  color: #fff;
+	  position: relative;
+	  top: -55px;   /* move up */
+	  left: 45px;  /* shift right */
+	}
+
+
+	/* Desktop: keep stacked but maybe make tagline a bit larger */
+	@media (min-width: 768px) {
+	  .tagline {
+		font-size: 1rem;
+	  }
+	}
+
+    /* NAV */
+    nav {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      background-color: rgba(10, 77, 162, 0.8);
+      padding: 0.5rem 1rem;
+      margin: 0.3rem;
+      border-radius: 4px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    nav a.active {
+      background-color: #0a4da2;
+    }
+	
+	.map-container {
+	  position: relative;
+	  width: 100%;
+	  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+	  height: 0;
+	  overflow: hidden;
+	  margin: 2rem 0;
+	}
+
+	.map-container iframe {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  border: 0;
+	}
+
+	
+	/* MAIN CONTENT */
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #333;
+      border-radius: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    .form-group textarea {
+      height: 100px;
+    }
+    button {
+      background-color: #0a4da2;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+	
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #616161;
+      padding: 1rem 0;
+      margin-top: 3rem;
+    }
+    .disclaimer-link {
+      display: block;
+      margin-top: 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+	<header>
+	  <div class="lang-switch">
+		<a href="../index.html">ET</a> |
+		<a href="index.html">EN</a>
+		<!-- | <a href="#">RU</a> -->
+	  </div>
+	  <div class="brand">
+		<a href="index.html">
+		  <img src="nodeden_logo.png" alt="NodeDen Logo" class="logo" />
+		</a>
+		<p class="tagline">IT Repair & Refurbishment</p>
+	  </div>
+	</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="prices.html">Prices</a>
+    <a href="status.html">Check Status</a>
+    <a href="booking.html">Booking</a>
+    <a href="shop.html">Shop</a>
+	<a href="tips.html">Tips</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+
+  <main>
+    <h2>Contact Us</h2>
+    <p>If you have questions or need help, feel free to reach out:</p>
+
+    <form id="contactForm" action="https://nodeden-backend.onrender.com/api/contact" method="POST">
+     <div class="form-group">
+       <label for="email">Your email:</label>
+       <input type="email" id="email" name="email" required />
+     </div>
+     <div class="form-group">
+       <label for="message">Your Message:</label>
+       <textarea id="message" name="message" required></textarea>
+     </div>
+	 <input type="hidden" id="recaptcha_token" name="recaptcha_token" />
+	 <input type="hidden" name="lang" value="en">
+	 <p><small><em> - We will use your email address only to respond to your message. See our <a href="disclaimer.html">Privacy Policy</a> for details.</em></small></p>
+     <button type="submit">Send Message</button>
+	</form>
+	
+	<div class="map-container">
+	  <iframe
+		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47731.256831651604!2d24.61817670025276!3d59.45771385431081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x61b98cddec9aa4c3%3A0x6b1aed77b7d8fc99!2sNodeDen!5e1!3m2!1set!2see!4v1758270045819!5m2!1set!2see"
+		style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
+
+    <h3>Contact Info</h3>
+    <p>Email: <a href="mailto:info@nodeden.ee">info@nodeden.ee</a></p>
+    <p>Phone: +372 5396 3407 (Evening hours only 16:00 - 20:00)</p>
+	
+	<div style="text-align: center; margin-top: 2rem;">
+	 <a href="https://www.instagram.com/nodeden_it" target="_blank" style="margin: 0 10px; color: #C13584;">
+      <i class="fab fa-instagram fa-2x"></i>
+     </a>
+     <a href="https://www.facebook.com/share/19ddfFPrwA/?mibextid=wwXIfr" target="_blank" style="margin: 0 10px; color: #1877F2;">
+      <i class="fab fa-facebook fa-2x"></i>
+     </a>
+     <a href="https://m.me/nodeden" target="_blank" style="margin: 0 10px; color: #0084FF;">
+      <i class="fab fa-facebook-messenger fa-2x"></i>
+     </a>
+     <a href="https://wa.link/t7bjgi" target="_blank" style="margin: 0 10px; color: #25D366;">
+      <i class="fab fa-whatsapp fa-2x"></i>
+     </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 NodeDen. All rights reserved. | <a href="disclaimer.html">Disclaimer & Terms</a></p>
+  </footer>
+  
+    <!-- reCAPTCHA v3 execution script -->
+	<script>
+	form.addEventListener("submit", function(e) {
+		e.preventDefault();
+
+	form.addEventListener("submit", function(e) {
+		e.preventDefault();
+
+		grecaptcha.ready(function() {
+			grecaptcha.execute('6LeSOcIrAAAAAIEyrMbzVkBrLnZkzOKtYueXTsTl', {action: 'contact'}).then(function(token) {
+				document.getElementById('recaptcha_token').value = token;
+				// bypass the event listener to actually submit
+				HTMLFormElement.prototype.submit.call(form);
+			});
+		});
+	});
+	</script>
+	
+	
+
+</body>
+</html>
+

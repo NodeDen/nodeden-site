@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NodeDen - Home</title>
+  <title>NodeDen - Hinnad</title>
   <style>
     body {
       margin: 0;
@@ -93,6 +93,22 @@
       color: #333;
       border-radius: 8px;
     }
+    .price-section {
+      margin-top: 2rem;
+    }
+    .price-section h3 {
+      color: #0a4da2;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.3rem;
+      margin-top: 1.5rem;
+    }
+    .price-section ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .price-section li {
+      margin: 0.5rem 0;
+    }
 	
     /* FOOTER */
     footer {
@@ -107,14 +123,15 @@
       margin-top: 2rem;
       text-align: center;
     }
+	
   </style>
 </head>
 <body>
 	<header>
 	  <div class="lang-switch">
-		<a href="../index.html">ET</a> |
-		<a href="index.html">EN</a> <!-- | 
-		<a href="#">RU</a> -->
+		<a href="hinnad.html">ET</a> |
+		<a href="/en/prices.html">EN</a>
+		<!-- | <a href="#">RU</a> -->
 	  </div>
 	  <div class="brand">
 		<a href="index.html">
@@ -125,25 +142,53 @@
 	</header>
 
   <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="services.html">Services</a>
-    <a href="prices.html">Prices</a>
-    <a href="status.html">Check Status</a>
-    <a href="booking.html">Booking</a>
-    <a href="shop.html">Shop</a>
+    <a href="index.html">Kodu</a>
+    <a href="teenused.html">Teenused</a>
+    <a href="hinnad.html" class="active">Hinnad</a>
+    <a href="staatus.html">Töö Staatus</a>
+    <a href="broneerimine.html">Broneerimine</a>
+    <a href="pood.html">Pood</a>
 	<a href="tips.html">Tips</a>
-    <a href="contact.html">Contact</a>
+    <a href="kontakt.html">Kontakt</a>
   </nav>
 
   <main>
-    <h2>Welcome to NodeDen</h2>
-    <p>We offer modern and trustworthy IT repair, refurbishment, and upgrade services. Based in Põhja-Tallinn, our services are available during evenings — perfect for people with busy daytime schedules.</p>
-	<img src="style.jpg" alt="Image for Style" style="max-width: 100%; border-radius: 8px; margin-top: 1rem;" />
-    <p>Whether you need a device repaired, refurbished, or just need tech help after hours, NodeDen is here for you.</p>
+    <h2>Teenuste hinnad</h2>
+    <p>Läbipaistev ja paindlik hinnakujundus — enamik töid tehakse väljaspool tööaega või kokkuleppel. Lõplik hind võib seadmest ja keerukusest olenevalt erineda.</p>
+
+    <section class="price-section">
+      <h3>🔧 Remont</h3>
+      <ul>
+        <li>Arvuti/sülearvuti diagnostika – <strong>€15</strong></li>
+        <li>Toitepesa või pordi vahetamine – <strong>€30–50</strong></li>
+        <li>Ekraani vahetus – <strong>€40–80</strong> (plus varuosad)</li>
+        <li>Konsoolide/telerite remont – <strong>alates €25</strong></li>
+      </ul>
+    </section>
+
+    <section class="price-section">
+      <h3>⚙️ Täiendused</h3>
+      <ul>
+        <li>SSD paigaldus & OS install/seadistamine – <strong>€30–40</strong></li>
+        <li>RAM uuendamine/paigaldamine – <strong>€10–20</strong></li>
+        <li>Tarkvara optimeerimine – <strong>€15</strong></li>
+      </ul>
+    </section>
+
+    <section class="price-section">
+      <h3>🔍 Diagnostika ja tugi</h3>
+      <ul>
+        <li>Põhidiagnostika (riistvara/tarkvara) – <strong>€15</strong></li>
+        <li>Kaugabina tõrkeotsing – <strong>€10 / 30 min</strong></li>
+        <li>Järeletulemine ja kohaletoimetamine Tallinna piirkonnas – <strong>€5–10</strong></li>
+      </ul>
+    </section>
+
+    <p>Vajad midagi, mida nimekirjas pole? <a href="kontakt.html">Võtke ühendust</a> hinnapakkumise saamiseks.</p>
   </main>
 
   <footer>
-    <p>&copy; 2025 NodeDen. All rights reserved. | <a href="disclaimer.html">Disclaimer & Terms</a></p>
+    <p>&copy; 2025 NodeDen. All rights reserved. | <a href="tingimused.html">Tingimused & Privaatsus</a></p>
   </footer>
 </body>
 </html>

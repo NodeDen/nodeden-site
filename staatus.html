@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NodeDen - Home</title>
+  <title>NodeDen - Töö Staatus</title>
   <style>
     body {
       margin: 0;
@@ -93,7 +93,21 @@
       color: #333;
       border-radius: 8px;
     }
-	
+    input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    button {
+      background-color: #0a4da2;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
     /* FOOTER */
     footer {
       text-align: center;
@@ -112,9 +126,9 @@
 <body>
 	<header>
 	  <div class="lang-switch">
-		<a href="../index.html">ET</a> |
-		<a href="index.html">EN</a> <!-- | 
-		<a href="#">RU</a> -->
+		<a href="staatus.html">ET</a> |
+		<a href="/en/status.html">EN</a>
+		<!-- | <a href="#">RU</a> -->
 	  </div>
 	  <div class="brand">
 		<a href="index.html">
@@ -125,25 +139,47 @@
 	</header>
 
   <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="services.html">Services</a>
-    <a href="prices.html">Prices</a>
-    <a href="status.html">Check Status</a>
-    <a href="booking.html">Booking</a>
-    <a href="shop.html">Shop</a>
+    <a href="index.html">Kodu</a>
+    <a href="teenused.html">Teenused</a>
+    <a href="hinnad.html">Hinnad</a>
+    <a href="staatus.html" class="active">Töö Staatus</a>
+    <a href="broneerimine.html">Broneerimine</a>
+    <a href="pood.html">Pood</a>
 	<a href="tips.html">Tips</a>
-    <a href="contact.html">Contact</a>
+    <a href="kontakt.html">Kontakt</a>
   </nav>
 
   <main>
-    <h2>Welcome to NodeDen</h2>
-    <p>We offer modern and trustworthy IT repair, refurbishment, and upgrade services. Based in Põhja-Tallinn, our services are available during evenings — perfect for people with busy daytime schedules.</p>
-	<img src="style.jpg" alt="Image for Style" style="max-width: 100%; border-radius: 8px; margin-top: 1rem;" />
-    <p>Whether you need a device repaired, refurbished, or just need tech help after hours, NodeDen is here for you.</p>
+    <h2>Kontrolli töö staatust</h2>
+    <p>Sisesta töö ID, et näha oma remondi- või hooldustöö praegust olekut.</p>
+	<form action="https://nodeden-backend.onrender.com/api/status" method="POST">
+	  <input type="text" id="jobNumber" name="job_number" placeholder="Töö ID" required>
+	  <input type="hidden" name="lang" id="langInput" value="et">
+	  <button type="submit">Kontrolli staatust</button>
+	</form>
+
+	<script>
+	document.addEventListener("DOMContentLoaded", () => {
+	  // Set hidden language automatically
+	  const lang = document.documentElement.lang || "en"; 
+	  document.getElementById("langInput").value = lang;
+	});
+	</script>	
+	<script>
+	document.getElementById('statusForm').addEventListener('submit', function(e) {
+	  e.preventDefault();
+	  const jobNumber = document.getElementById('jobNumber').value;
+	  const lang = document.getElementById('lang').value;
+	  window.location.href = `https://nodeden-backend.onrender.com/api/status/${jobNumber}?lang=${lang}`;
+	});
+	</script>
+    <p style="margin-top: 2rem; font-size: 0.9rem; color: #888;">
+      Kui teil pole töö ID-d, palun võtke <a href="kontakt.html">meiega ühendust</a>.
+    </p>
   </main>
 
   <footer>
-    <p>&copy; 2025 NodeDen. All rights reserved. | <a href="disclaimer.html">Disclaimer & Terms</a></p>
+    <p>&copy; 2025 NodeDen. All rights reserved. | <a href="tingimused.html">Tingimused & Privaatsus</a></p>
   </footer>
 </body>
 </html>

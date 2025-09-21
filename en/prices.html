@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NodeDen - Home</title>
+  <title>NodeDen - Prices</title>
   <style>
     body {
       margin: 0;
@@ -94,6 +94,22 @@
       border-radius: 8px;
     }
 	
+    .price-section {
+      margin-top: 2rem;
+    }
+    .price-section h3 {
+      color: #0a4da2;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.3rem;
+      margin-top: 1.5rem;
+    }
+    .price-section ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .price-section li {
+      margin: 0.5rem 0;
+    }
     /* FOOTER */
     footer {
       text-align: center;
@@ -112,9 +128,9 @@
 <body>
 	<header>
 	  <div class="lang-switch">
-		<a href="../index.html">ET</a> |
-		<a href="index.html">EN</a> <!-- | 
-		<a href="#">RU</a> -->
+		<a href="../hinnad.html">ET</a> |
+		<a href="prices.html">EN</a> <!-- |
+		<a href="nodeden.html">RU</a> -->
 	  </div>
 	  <div class="brand">
 		<a href="index.html">
@@ -125,9 +141,9 @@
 	</header>
 
   <nav>
-    <a href="index.html" class="active">Home</a>
+    <a href="index.html">Home</a>
     <a href="services.html">Services</a>
-    <a href="prices.html">Prices</a>
+    <a href="prices.html" class="active">Prices</a>
     <a href="status.html">Check Status</a>
     <a href="booking.html">Booking</a>
     <a href="shop.html">Shop</a>
@@ -136,10 +152,38 @@
   </nav>
 
   <main>
-    <h2>Welcome to NodeDen</h2>
-    <p>We offer modern and trustworthy IT repair, refurbishment, and upgrade services. Based in Põhja-Tallinn, our services are available during evenings — perfect for people with busy daytime schedules.</p>
-	<img src="style.jpg" alt="Image for Style" style="max-width: 100%; border-radius: 8px; margin-top: 1rem;" />
-    <p>Whether you need a device repaired, refurbished, or just need tech help after hours, NodeDen is here for you.</p>
+    <h2>Service Prices</h2>
+    <p>Transparent and flexible pricing — most work is done after hours or by appointment. Final cost may vary depending on device and complexity.</p>
+
+    <section class="price-section">
+      <h3>🔧 Repairs</h3>
+      <ul>
+        <li>PC/Laptop diagnostics – <strong>€15</strong></li>
+        <li>Power jack or port replacement – <strong>€30–50</strong></li>
+        <li>Screen replacement – <strong>€40–80</strong> (plus parts)</li>
+        <li>Console/TV repairs – <strong>from €25</strong></li>
+      </ul>
+    </section>
+
+    <section class="price-section">
+      <h3>⚙️ Upgrades</h3>
+      <ul>
+        <li>SSD installation & OS setup – <strong>€30–40</strong></li>
+        <li>RAM upgrade – <strong>€10–20</strong></li>
+        <li>Software optimization – <strong>€15</strong></li>
+      </ul>
+    </section>
+
+    <section class="price-section">
+      <h3>🔍 Diagnostics & Support</h3>
+      <ul>
+        <li>Basic diagnostics (hardware/software) – <strong>€15</strong></li>
+        <li>Remote troubleshooting – <strong>€10 per 30 min</strong></li>
+        <li>Pickup & delivery in Tallinn area – <strong>€5–10</strong></li>
+      </ul>
+    </section>
+
+    <p>Need something not listed? <a href="contact.html">Contact us</a> for a quote.</p>
   </main>
 
   <footer>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NodeDen - Home</title>
+  <title>NodeDen - Tips</title>
   <style>
     body {
       margin: 0;
@@ -83,17 +83,39 @@
     nav a.active {
       background-color: #0a4da2;
     }
-	
+
 	/* MAIN CONTENT */
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
       padding: 2rem;
       background-color: rgba(255, 255, 255, 0.9);
       color: #333;
       border-radius: 8px;
     }
-	
+
+
+    .tips-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .tip-card {
+      background-color: #f5f5f5;
+      color: #333;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .tip-card h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #0a4da2;
+    }
+
     /* FOOTER */
     footer {
       text-align: center;
@@ -107,14 +129,15 @@
       margin-top: 2rem;
       text-align: center;
     }
+	
   </style>
 </head>
 <body>
 	<header>
 	  <div class="lang-switch">
 		<a href="../index.html">ET</a> |
-		<a href="index.html">EN</a> <!-- | 
-		<a href="#">RU</a> -->
+		<a href="index.html">EN</a>
+		<!-- | <a href="#">RU</a> -->
 	  </div>
 	  <div class="brand">
 		<a href="index.html">
@@ -125,21 +148,47 @@
 	</header>
 
   <nav>
-    <a href="index.html" class="active">Home</a>
+    <a href="index.html">Home</a>
     <a href="services.html">Services</a>
     <a href="prices.html">Prices</a>
     <a href="status.html">Check Status</a>
     <a href="booking.html">Booking</a>
     <a href="shop.html">Shop</a>
-	<a href="tips.html">Tips</a>
+    <a href="tips.html" class="active">Tips</a>
     <a href="contact.html">Contact</a>
+
   </nav>
 
   <main>
-    <h2>Welcome to NodeDen</h2>
-    <p>We offer modern and trustworthy IT repair, refurbishment, and upgrade services. Based in Põhja-Tallinn, our services are available during evenings — perfect for people with busy daytime schedules.</p>
-	<img src="style.jpg" alt="Image for Style" style="max-width: 100%; border-radius: 8px; margin-top: 1rem;" />
-    <p>Whether you need a device repaired, refurbished, or just need tech help after hours, NodeDen is here for you.</p>
+    <h2>Helpful Tips</h2>
+    <p>Practical advice for maintaining, repairing, and optimizing your devices at home.</p>
+
+    <div class="tips-container">
+      <div class="tip-card">
+        <h3>Device Cleaning</h3>
+        <p>Use compressed air for keyboards and vents. Wipe screens with a soft microfiber cloth. Avoid harsh chemicals.</p>
+      </div>
+      <div class="tip-card">
+        <h3>Battery Care</h3>
+        <p>Don’t let laptops or phones overheat. Avoid full discharges frequently. Charge in cool environments when possible.</p>
+      </div>
+      <div class="tip-card">
+        <h3>Safe Upgrades</h3>
+        <p>Only upgrade RAM or storage with compatible parts. Follow manufacturer guidelines and static discharge precautions.</p>
+      </div>
+      <div class="tip-card">
+        <h3>Backup Regularly</h3>
+        <p>Maintain a simple backup routine using cloud or external drives to prevent data loss.</p>
+      </div>
+      <div class="tip-card">
+        <h3>Security Practices</h3>
+        <p>Keep your software updated, avoid suspicious downloads, and use strong passwords or password managers.</p>
+      </div>
+      <div class="tip-card">
+        <h3>Performance Boost</h3>
+        <p>Clean startup programs, uninstall unused apps, and periodically clean temporary files to keep your PC fast.</p>
+      </div>
+    </div>
   </main>
 
   <footer>
