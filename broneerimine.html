@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NodeDen - Broneerimine</title>
-  <script src="https://www.google.com/recaptcha/api.js?render=6LeSOcIrAAAAAIEyrMbzVkBrLnZkzOKtYueXTsTl"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LfxXNIrAAAAAL2CI5_mQCyU2_eJFVFR-mYwbHWF"></script>
   <style>
     body {
       margin: 0;
@@ -216,7 +216,7 @@
 	form.addEventListener('submit', function(event) {
 	  event.preventDefault(); // stop normal submission
 	  grecaptcha.ready(function() {
-		grecaptcha.execute('6LeSOcIrAAAAAIEyrMbzVkBrLnZkzOKtYueXTsTl', {action: 'booking'}).then(function(token) {
+		grecaptcha.execute('6LfxXNIrAAAAAL2CI5_mQCyU2_eJFVFR-mYwbHWF', {action: 'booking'}).then(function(token) {
 		  document.getElementById('recaptchaToken').value = token; // fill token
 		  form.submit(); // now submit form normally
 		});
@@ -226,3 +226,4 @@
 
 </body>
 </html>
+
