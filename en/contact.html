@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NodeDen - Contact</title>
-  <script src="https://www.google.com/recaptcha/api.js?render=6LeSOcIrAAAAAIEyrMbzVkBrLnZkzOKtYueXTsTl"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LfxXNIrAAAAAL2CI5_mQCyU2_eJFVFR-mYwbHWF"></script>
   <style>
     body {
       margin: 0;
@@ -243,7 +243,7 @@
 		e.preventDefault();
 
 		grecaptcha.ready(function() {
-			grecaptcha.execute('6LeSOcIrAAAAAIEyrMbzVkBrLnZkzOKtYueXTsTl', {action: 'contact'}).then(function(token) {
+			grecaptcha.execute('6LfxXNIrAAAAAL2CI5_mQCyU2_eJFVFR-mYwbHWF', {action: 'contact'}).then(function(token) {
 				document.getElementById('recaptcha_token').value = token;
 				// bypass the event listener to actually submit
 				HTMLFormElement.prototype.submit.call(form);
@@ -256,5 +256,6 @@
 
 </body>
 </html>
+
 
 
