@@ -161,7 +161,7 @@
     <a href="staatus.html">Töö Staatus</a>
     <a href="broneerimine.html" class="active">Broneerimine</a>
     <a href="pood.html">Pood</a>
-	<a href="tips.html">Tips</a>
+	<a href="kasulikku.html">Kasulikku</a>
     <a href="kontakt.html">Kontakt</a>
   </nav>
 
@@ -170,20 +170,20 @@
     <form action="https://nodeden-backend.onrender.com/api/book" method="POST">
 
       <input type="hidden" id="Full_name" name="full_name" />
-
-      <label for="email">Emaili Address</label>
-      <input type="email" id="email" name="email" required />
+	  
+	  <label for="issue">Probleem</label>
+      <textarea id="issue" name="issue" rows="4" required></textarea>
 
       <input type="hidden" id="phone" name="phone" />
 
       <label for="device">Seade (tüüp, mudel)</label>
       <textarea id="device" name="device" rows="1" required></textarea>
-	  
-	  <label for="issue">Probleem</label>
-      <textarea id="issue" name="issue" rows="4" required></textarea>
 
       <label for="preferred_time">Eelistatud üleandmise aeg (valikuline)</label>
       <input type="text" id="preferred_time" name="preferred_time" placeholder="n. tööpäeva õhtu ja kellaaeg" />
+	  
+	  <label for="email">Emaili Address</label>
+      <input type="email" id="email" name="email" required />
 	  
 	  <!-- hidden field for token -->
       <input type="hidden" id="recaptchaToken" name="recaptcha_token">
