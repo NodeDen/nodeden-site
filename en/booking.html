@@ -170,7 +170,7 @@
     <form id="bookingForm" action="https://nodeden-backend.onrender.com/api/book" method="POST">
 
       <input type="hidden" id="Full_name" name="full_name" />
-
+	  
 	  <label for="issue">Issue</label>
       <textarea id="issue" name="issue" rows="4" required></textarea>
 
@@ -181,7 +181,7 @@
 
       <label for="preferred_time">Preferred Drop-off Time (optional)</label>
       <input type="text" id="preferred_time" name="preferred_time" placeholder="e.g., Weekday evening and time" />
-
+	  
 	  <label for="email">Email Address</label>
       <input type="email" id="email" name="email" required />
 	  
@@ -189,13 +189,24 @@
       <input type="hidden" id="recaptchaToken" name="recaptcha_token">
 	  <input type="hidden" name="lang" value="en">
 	  
+	  <!-- Privacy checkbox -->
 	  <div style="margin-top: 20px;">
-	    <label style="font-weight: normal;">
+	    <label style="font-size: 0.9rem; font-style: italic; font-weight: normal;">
 		  <input type="checkbox" name="privacy_agreement" required>
 		  I have read and agree to the 
-		  <a href="disclaimer.html" target="_blank">Privacy & Data Agreement</a>.
+		  <a href="NodeDen_Legal_Disclaimer_&_Privacy_Policy.pdf" target="_blank">Privacy & Data Agreement</a>.
 	    </label>
 	  </div>
+	  	  
+	  <!-- Repair Agreement checkbox -->
+	  <div style="margin-top: 10px;">
+	    <label style="font-size: 0.9rem; font-style: italic; font-weight: normal;">
+		  <input type="checkbox" name="service_agreement" required>
+		  I have read and agree to the 
+		  <a href="NodeDen_Service_Consent_Form.pdf" target="_blank">Repair Agreement</a>.
+	    </label>
+	  </div>
+
 
 
       <button type="submit">Submit Booking Request</button>
@@ -227,5 +238,4 @@
         async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
-
 
