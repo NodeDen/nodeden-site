@@ -129,6 +129,40 @@
       margin-top: 2rem;
       text-align: center;
     }
+	.video-container {
+	  position: relative;
+	  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+	  height: 0;
+	  overflow: hidden;
+	  max-width: 100%;
+	  margin: 2rem 0;
+	  border-radius: 12px;
+	  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+	}
+
+	.video-container iframe {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  border: 0;
+	}
+	.video-grid {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	  gap: 1.5rem;
+	  margin-top: 2rem;
+	}
+
+	.video-grid iframe {
+	  width: 100%;
+	  height: 225px;
+	  border-radius: 8px;
+	  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+	  border: none;
+	}
+
 	
   </style>
 </head>
@@ -158,8 +192,41 @@
     <a href="contact.html">Contact</a>
 
   </nav>
-
+  
   <main>
+  
+  	<!-- Refurbishment Timelapses Section -->
+    <section id="refurb-timelapses" style="margin-bottom: 3rem;">
+      <h2>Refurb and repair by NodeDen</h2>
+      <p>
+        Useful videos for DIY-ers🔧💻. Full length and normal speed videos you can find in our <a href="https://www.youtube.com/@NodeDen_IT" target="_blank" style="color: #0a4da2;">YouTube.</a> Like and subscribe is always welcome 😎
+      </p>
+	
+	<div class="video-grid">
+	  <!-- Example YouTube embeds -->
+        <iframe 
+          src="https://www.youtube.com/embed/KwlY0JG3Cl0" 
+          title="Dell Latitude 5289 Refurb Timelapse"
+          allowfullscreen 
+          loading="lazy">
+        </iframe>
+        <iframe 
+          src="https://www.youtube.com/embed/DFcTAG8ZsxM" 
+          title="Macbook Air Refurb Timelapse"
+          allowfullscreen 
+          loading="lazy">
+        </iframe>
+	  <!-- Add more videos as you create them -->
+	</div>
+	
+	<p style="text-align: center; margin-top: 1.5rem; color: #555;">
+      Follow us also on 
+	  <a href="https://www.facebook.com/share/19ddfFPrwA/?mibextid=wwXIfr" target="_blank" style="color: #0a4da2;">Facebook</a>,
+      <a href="https://www.instagram.com/nodeden_it" target="_blank" style="color: #0a4da2;">Instagram</a>, and 
+      <a href="https://www.tiktok.com/@nodeden_it" target="_blank" style="color: #0a4da2;">TikTok</a>
+      to see what else we are up to.
+    </p>
+	<br>
     <h2>Helpful Tips</h2>
     <p>Practical advice for maintaining, repairing, and optimizing your devices at home.</p>
 
@@ -189,6 +256,7 @@
         <p>Clean startup programs, uninstall unused apps, and periodically clean temporary files to keep your PC fast.</p>
       </div>
     </div>
+	
   </main>
 
   <footer>
