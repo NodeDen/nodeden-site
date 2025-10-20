@@ -171,19 +171,19 @@
 
       <input type="hidden" id="Full_name" name="full_name" />
 
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required />
+	  <label for="issue">Issue</label>
+      <textarea id="issue" name="issue" rows="4" required></textarea>
 
       <input type="hidden" id="phone" name="phone" />
 
       <label for="device">Device (type, model)</label>
       <textarea id="device" name="device" rows="1" required></textarea>
-	  
-	  <label for="issue">Issue</label>
-      <textarea id="issue" name="issue" rows="4" required></textarea>
 
       <label for="preferred_time">Preferred Drop-off Time (optional)</label>
       <input type="text" id="preferred_time" name="preferred_time" placeholder="e.g., Weekday evening and time" />
+
+	  <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
 	  
 	  <!-- hidden field for token -->
       <input type="hidden" id="recaptchaToken" name="recaptcha_token">
@@ -227,4 +227,5 @@
         async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
+
 
