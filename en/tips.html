@@ -150,16 +150,16 @@
 	}
 	.video-grid {
 	  display: grid;
-	  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-	  gap: 1.5rem;
+	  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* allow small columns */
+	  gap: 1rem;
 	  margin-top: 2rem;
 	}
 
 	.video-grid iframe {
 	  width: 100%;
-	  height: 225px;
+	  aspect-ratio: 16/9; /* keeps proper ratio and scales automatically */
 	  border-radius: 8px;
-	  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+	  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 	  border: none;
 	}
 
@@ -266,5 +266,6 @@
       async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
+
 
 
