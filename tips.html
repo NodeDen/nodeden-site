@@ -128,6 +128,39 @@
       margin-top: 2rem;
       text-align: center;
     }
+		.video-container {
+	  position: relative;
+	  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+	  height: 0;
+	  overflow: hidden;
+	  max-width: 100%;
+	  margin: 2rem 0;
+	  border-radius: 12px;
+	  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+	}
+
+	.video-container iframe {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  border: 0;
+	}
+	.video-grid {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	  gap: 1.5rem;
+	  margin-top: 2rem;
+	}
+
+	.video-grid iframe {
+	  width: 100%;
+	  height: 225px;
+	  border-radius: 8px;
+	  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+	  border: none;
+	}
 	
   </style>
 </head>
@@ -158,6 +191,39 @@
   </nav>
 
   <main>
+  
+    	<!-- Refurbishment Timelapses Section -->
+    <section id="refurb-timelapses" style="margin-bottom: 3rem;">
+      <h2>Refurb ja remont by NodeDen´ilt</h2>
+      <p>
+        Kasulikke videoid isetegijatele🔧💻. Täispikad ja normaalkiirusega videod leiad meie <a href="https://www.youtube.com/@NodeDen_IT" target="_blank" style="color: #0a4da2;">YouTube</a>´st. Like ja subscribe on alati teretulnud 😎
+      </p>
+	
+	<div class="video-grid">
+	  <!-- Example YouTube embeds -->
+        <iframe 
+          src="https://www.youtube.com/embed/KwlY0JG3Cl0" 
+          title="Dell Latitude 5289 Refurb Timelapse"
+          allowfullscreen 
+          loading="lazy">
+        </iframe>
+        <iframe 
+          src="https://www.youtube.com/embed/DFcTAG8ZsxM" 
+          title="Macbook Air Refurb Timelapse"
+          allowfullscreen 
+          loading="lazy">
+        </iframe>
+	  <!-- Add more videos as you create them -->
+	</div>
+	
+	<p style="text-align: center; margin-top: 1.5rem; color: #555;">
+      Jälgi meid ka 
+	  <a href="https://www.facebook.com/share/19ddfFPrwA/?mibextid=wwXIfr" target="_blank" style="color: #0a4da2;">Facebookis</a>,
+      <a href="https://www.instagram.com/nodeden_it" target="_blank" style="color: #0a4da2;">Instagramis</a>, ja 
+      <a href="https://www.tiktok.com/@nodeden_it" target="_blank" style="color: #0a4da2;">TikTokis</a>,
+      et näha, millega me veel tegeleme.
+    </p>
+	<br>
     <h2>Kasulikke näpunäiteid</h2>
     <p>Praktilised nõuanded seadmete ise hooldamiseks, parandamiseks ja optimeerimiseks.</p>
 
