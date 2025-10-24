@@ -107,6 +107,10 @@
       margin-top: 2rem;
       text-align: center;
     }
+	@keyframes fadein {
+	  from { opacity: 0; }
+	  to { opacity: 1; }
+	}
 	
   </style>
 </head>
@@ -139,7 +143,13 @@
   <main>
     <h2>Tere tulemast NodeDen`i!</h2>
     <p>Pakume kaasaegseid ja usaldusväärseid IT- ja elektroonikaseadmete remondi-, taastamis- ja uuendusteenuseid. Asume Põhja-Tallinnas, meie teenused on saadaval õhtuti – ideaalne neile, kellel on kiire päevane ajakava.</p>
-	<img src="style.jpg" alt="Image for Style" style="max-width: 100%; border-radius: 8px; margin-top: 1rem;" />
+	<video autoplay loop muted playsinline
+        poster="style.jpg"
+        style="max-width: 100%; border-radius: 8px; margin-top: 1rem; opacity: 0; animation: fadein 1.2s ease forwards;">
+	  <source src="style.mp4" type="video/mp4">
+	  <source src="style.webm" type="video/webm">
+	  Your browser does not support the video tag.
+	</video>
     <p>Olenemata sellest, kas vajate seadme remonti, taastamist või lihtsalt tehnilist abi väljaspool tööaega, on NodeDen teie jaoks olemas.</p>
   </main>
 
