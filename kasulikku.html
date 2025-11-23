@@ -160,6 +160,11 @@
 	  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 	  border: none;
 	}
+	@media (max-width: 700px) {
+      .video-grid {
+        grid-template-columns: 1fr; /* stack on mobile */
+      }
+    }
 	
   </style>
 </head>
@@ -273,6 +278,7 @@
       async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
+
 
 
 
