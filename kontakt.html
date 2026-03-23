@@ -245,20 +245,21 @@
   </footer>
   
     <!-- reCAPTCHA v3 execution script -->
-<script>
-const form = document.querySelector("form");
-
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    grecaptcha.ready(function() {
-        grecaptcha.execute('6LfxXNIrAAAAAL2CI5_mQCyU2_eJFVFR-mYwbHWF', {action: 'contact'}).then(function(token) {
-            document.getElementById('recaptchaToken').value = token;
-            form.submit(); // normal submit after token
-        });
-    });
-});
-</script>
+	<script>
+	const form = document.getElementById("contactForm");
+	
+	form.addEventListener("submit", function(e) {
+	    e.preventDefault();
+	
+	    grecaptcha.ready(function() {
+	        grecaptcha.execute('6LfxXNIrAAAAAL2CI5_mQCyU2_eJFVFR-mYwbHWF', {action: 'contact'})
+	        .then(function(token) {
+	            document.getElementById('recaptcha_token').value = token; // FIXED ID
+	            form.submit(); // continue normal submit
+	        });
+	    });
+	});
+	</script>
     <script data-goatcounter="https://nodeden.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>	
 </body>
