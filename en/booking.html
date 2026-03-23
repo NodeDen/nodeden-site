@@ -169,18 +169,18 @@
     <h2>Book a Service</h2>
     <form id="bookingForm" action="https://nodeden-backend.onrender.com/api/book" method="POST">
 
-      <input type="hidden" id="Full_name" name="full_name" />
+      <input type="hidden" id="Full_name" name="full_name" value=""/>
 	  
 	  <label for="issue">Issue</label>
       <textarea id="issue" name="issue" rows="4" required></textarea>
 
-      <input type="hidden" id="phone" name="phone" />
+      <input type="hidden" id="phone" name="phone" value=""/>
 
       <label for="device">Device (type, model)</label>
       <textarea id="device" name="device" rows="1" required></textarea>
 
       <label for="preferred_time">Preferred Drop-off Time (optional)</label>
-      <input type="text" id="preferred_time" name="preferred_time" placeholder="e.g., Weekday evening and time" />
+      <input type="text" id="preferred_time" name="preferred_time" placeholder="e.g., Weekday evening and time" value=""/>
 	  
 	  <label for="email">Email Address</label>
       <input type="email" id="email" name="email" required />
@@ -222,16 +222,30 @@
   
     <!-- reCAPTCHA v3 execution script -->
 	<script>
-	const form = document.getElementById('bookingForm');
-
-	form.addEventListener('submit', function(event) {
-	  event.preventDefault(); // stop normal submission
-	  grecaptcha.ready(function() {
-		grecaptcha.execute('6LfxXNIrAAAAAL2CI5_mQCyU2_eJFVFR-mYwbHWF', {action: 'booking'}).then(function(token) {
-		  document.getElementById('recaptchaToken').value = token; // fill token
-		  form.submit(); // now submit form normally
-		});
-	  });
+	document.addEventListener("DOMContentLoaded", function() {
+	    const form = document.getElementById('bookingForm');
+	
+	    form.addEventListener('submit', function(event) {
+	        event.preventDefault();
+	
+	        // Fill empty hidden fields or optional fields with a placeholder
+	        const fullName = document.getElementById('full_name');
+	        if (!fullName.value.trim()) fullName.value = " ";
+	
+	        const phone = document.getElementById('phone');
+	        if (!phone.value.trim()) phone.value = " ";
+	
+	        const preferredTime = document.getElementById('preferred_time');
+	        if (!preferredTime.value.trim()) preferredTime.value = " ";
+	
+	        // reCAPTCHA v3
+	        grecaptcha.ready(function() {
+	            grecaptcha.execute('6LfxXNIrAAAAAL2CI5_mQCyU2_eJFVFR-mYwbHWF', {action: 'booking'}).then(function(token) {
+	                document.getElementById('recaptchaToken').value = token;
+	                form.submit(); // now submit form normally
+	            });
+	        });
+	    });
 	});
 	</script>
 	<script data-goatcounter="https://nodeden.goatcounter.com/count"
