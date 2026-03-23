@@ -219,24 +219,29 @@
     <p>&copy; 2025 NodeDen. All rights reserved. | <a href="tingimused.html">Tingimused & Privaatsus</a></p>
   </footer>
   
-	<script>
-	const form = document.getElementById('bookingForm');
-	
-	form.addEventListener('submit', function(event) {
-	  event.preventDefault();
-	
-	  // fill empty hidden fields just in case
-	  document.getElementById('full_name').value ||= '';
-	  document.getElementById('phone').value ||= '';
-	
-	  grecaptcha.ready(function() {
-	    grecaptcha.execute('YOUR_SITE_KEY', {action: 'booking'}).then(function(token) {
-	      document.getElementById('recaptchaToken').value = token;
-	      form.submit(); // submit normally
-	    });
-	  });
-	});
-	</script>
+
+<!-- reCAPTCHA v3 script -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LfxXNIrAAAAAL2CI5_mQCyU2_eJFVFR-mYwbHWF"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('bookingForm');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // stop normal submission
+
+        // Execute reCAPTCHA
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LfxXNIrAAAAAL2CI5_mQCyU2_eJFVFR-mYwbHWF', {action: 'booking'}).then(function(token) {
+                // Fill hidden token field
+                document.getElementById('recaptchaToken').value = token;
+
+                // Submit form normally after token is set
+                form.submit();
+            });
+        });
+    });
+});
+</script>
 	<script data-goatcounter="https://nodeden.goatcounter.com/count"
       async src="//gc.zgo.at/count.js"></script>
 </body>
