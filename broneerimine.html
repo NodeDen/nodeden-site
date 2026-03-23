@@ -220,7 +220,7 @@
   </footer>
   
 
-<!-- reCAPTCHA v3 script -->
+<!-- reCAPTCHA v3 Script -->
 <script src="https://www.google.com/recaptcha/api.js?render=6LfxXNIrAAAAAL2CI5_mQCyU2_eJFVFR-mYwbHWF"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -229,14 +229,18 @@ document.addEventListener("DOMContentLoaded", function() {
     form.addEventListener('submit', function(event) {
         event.preventDefault(); // stop normal submission
 
+        // Ensure hidden fields are non-empty for backend
+        const fullName = document.getElementById('full_name');
+        if (!fullName.value.trim()) fullName.value = " ";
+
+        const phone = document.getElementById('phone');
+        if (!phone.value.trim()) phone.value = " ";
+
         // Execute reCAPTCHA
         grecaptcha.ready(function() {
             grecaptcha.execute('6LfxXNIrAAAAAL2CI5_mQCyU2_eJFVFR-mYwbHWF', {action: 'booking'}).then(function(token) {
-                // Fill hidden token field
                 document.getElementById('recaptchaToken').value = token;
-
-                // Submit form normally after token is set
-                form.submit();
+                form.submit(); // submit form normally
             });
         });
     });
