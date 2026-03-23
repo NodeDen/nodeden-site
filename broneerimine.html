@@ -167,7 +167,7 @@
 
   <main>
     <h2>Broneeri töö</h2>
-    <form action="https://nodeden-backend.onrender.com/api/book" method="POST">
+	<form id="bookingForm" action="https://nodeden-backend.onrender.com/api/book" method="POST">
 
       <input type="hidden" id="Full_name" name="full_name" />
 	  
@@ -219,17 +219,18 @@
     <p>&copy; 2025 NodeDen. All rights reserved. | <a href="tingimused.html">Tingimused & Privaatsus</a></p>
   </footer>
   
-    <!-- reCAPTCHA v3 execution script -->
 	<script>
 	const form = document.getElementById('bookingForm');
-
+	
 	form.addEventListener('submit', function(event) {
-	  event.preventDefault(); // stop normal submission
+	  event.preventDefault();
+	
 	  grecaptcha.ready(function() {
-		grecaptcha.execute('6LfxXNIrAAAAAL2CI5_mQCyU2_eJFVFR-mYwbHWF', {action: 'booking'}).then(function(token) {
-		  document.getElementById('recaptchaToken').value = token; // fill token
-		  form.submit(); // now submit form normally
-		});
+	    grecaptcha.execute('6LfxXNIrAAAAAL2CI5_mQCyU2_eJFVFR-mYwbHWF', {action: 'booking'})
+	    .then(function(token) {
+	      document.getElementById('recaptchaToken').value = token;
+	      form.submit();
+	    });
 	  });
 	});
 	</script>
