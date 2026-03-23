@@ -225,11 +225,14 @@
 	form.addEventListener('submit', function(event) {
 	  event.preventDefault();
 	
+	  // fill empty hidden fields just in case
+	  document.getElementById('full_name').value ||= '';
+	  document.getElementById('phone').value ||= '';
+	
 	  grecaptcha.ready(function() {
-	    grecaptcha.execute('6LfxXNIrAAAAAL2CI5_mQCyU2_eJFVFR-mYwbHWF', {action: 'booking'})
-	    .then(function(token) {
+	    grecaptcha.execute('YOUR_SITE_KEY', {action: 'booking'}).then(function(token) {
 	      document.getElementById('recaptchaToken').value = token;
-	      form.submit();
+	      form.submit(); // submit normally
 	    });
 	  });
 	});
